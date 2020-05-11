@@ -6,8 +6,12 @@ FROM ubuntu:18.04
 RUN useradd -m -s /bin/bash precice
 ENV PRECICE_USER=precice
 
+COPY ubuntu/inittimezone /usr/local/bin/inittimezone
+
 # Install necessary dependencies for preCICE
-RUN apt-get -qq update && apt-get -qq -y install \
+RUN apt-get -qq update && \
+    inittimezone && \
+    apt-get -qq -y install \
     build-essential \
     libboost-all-dev \
     libeigen3-dev \
