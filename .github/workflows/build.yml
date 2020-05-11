@@ -1,0 +1,19 @@
+name: "Update Images"
+on:
+  schedule:
+    - cron: '0 2 1 * *'
+
+jobs:
+  latest:
+    strategy:
+      matrix:
+        image: [archlinux, centos7, ubuntu-1804, ubuntu-2004, formatting]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build image ci-${{ matrix.image }}
+        run: "make ${{ matrix.image }}"
+      - name: Upload to DockerHub
+        run: |
+          docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASS }}
+          docker push precice/ci-${{ matrix.image }}:latest
