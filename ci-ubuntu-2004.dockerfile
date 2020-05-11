@@ -1,12 +1,13 @@
 # Dockerfile for building preCICE on ubuntu 20.04
 
-# Using ubuntu 18.04 as basis
 FROM ubuntu:20.04
 
-RUN groupadd precice && useradd -m -s /bin/bash precice
+# Add the precice user to run test with mpi
+RUN useradd -m -s /bin/bash precice
+ENV PRECICE_USER=precice
 
 # Installing necessary dependecies for preCICE
-RUN apt-get -qq update && apt-get -qq install \
+RUN apt-get -qq update && apt-get -qq -y install \
     git \
     build-essential \
     cmake \
