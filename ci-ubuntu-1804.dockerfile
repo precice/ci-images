@@ -21,9 +21,10 @@ RUN apt-get -qq update && \
     libboost-all-dev \
     libeigen3-dev \
     libxml2-dev \
-    lintian
-    python-dev \
-    python-numpy \
+    lintian \
+    python \
+    python3-dev \
+    python3-numpy \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
