@@ -12,14 +12,17 @@ COPY ubuntu/inittimezone /usr/local/bin/inittimezone
 RUN apt-get -qq update && \
     inittimezone && \
     apt-get -qq -y install \
-    git \
     build-essential \
     cmake \
-    lintian \
+    g++ \
+    gfortran \
+    git \
+    libboost-all-dev \
     libeigen3-dev \
     libxml2-dev \
-    libboost-all-dev \
+    lintian \
     petsc-dev \
     python3-dev \
-    python3-numpy && \
-    rm -rf /var/lib/apt/lists/*
+    python3-numpy \
+    wget \
+    && rm -rf /var/lib/apt/lists/*

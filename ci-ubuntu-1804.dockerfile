@@ -13,17 +13,19 @@ RUN apt-get -qq update && \
     inittimezone && \
     apt-get -qq -y install \
     build-essential \
+    bzip2 \
+    cmake  \
+    g++ \
+    gfortran \
+    git \
     libboost-all-dev \
     libeigen3-dev \
     libxml2-dev \
-    git \
-    python-numpy \
+    lintian
     python-dev \
+    python-numpy \
     wget \
-    bzip2 \
-    cmake  \
-    lintian && \
-    rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 ADD --chown=root:root petsc/99-petsc-env.sh /etc/profile.d/
 ADD petsc/petsc-install.sh .
