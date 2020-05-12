@@ -1,2 +1,9 @@
 FROM alpine:3.10
-RUN apk update && apk upgrade && apk add git clang parallel
+
+# Install git, clang 8 (including clang-format) and GNU parallel
+# Mute the request for citation. (We will cite)
+RUN apk update && \
+    apk upgrade && \
+    apk add git clang parallel && \
+    mkdir -p $HOME/.parallel && \
+    touch $HOME/.parallel/will-cite
