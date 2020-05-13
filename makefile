@@ -1,4 +1,8 @@
-.PHONY: archlinux centos7 formatting ubuntu-1804 ubuntu-2004
+ALL=archlinux centos7 ubuntu-1804 ubuntu-2004 formatting
+
+.PHONY: $(ALL)
+
+all: $(ALL)
 
 archlinux:
 	docker build -t precice/ci-archlinux:latest -f ci-archlinux.dockerfile .
@@ -14,3 +18,6 @@ ubuntu-1804:
 
 ubuntu-2004:
 	docker build -t precice/ci-ubuntu-2004:latest -f ci-ubuntu-2004.dockerfile .
+
+clean:
+	docker rmi $(foreach img,$(ALL),ci-$(img):latest)
