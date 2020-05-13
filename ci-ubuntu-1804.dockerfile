@@ -1,5 +1,5 @@
 # Dockerfile for building preCICE on ubuntu 18.04
-#
+
 FROM ubuntu:18.04
 
 # Add the precice user to run test with mpi
@@ -12,20 +12,23 @@ COPY ubuntu/inittimezone /usr/local/bin/inittimezone
 RUN apt-get -qq update && \
     inittimezone && \
     apt-get -qq -y install \
-    build-essential \
-    bzip2 \
-    cmake  \
-    g++ \
-    gfortran \
-    git \
-    libboost-all-dev \
-    libeigen3-dev \
-    libxml2-dev \
-    lintian \
-    python \
-    python3-dev \
-    python3-numpy \
-    wget \
+        build-essential \
+        bzip2 \
+        cmake  \
+        g++ \
+        gfortran \
+        git \
+        libblas-dev \
+        libboost-all-dev \
+        libeigen3-dev \
+        liblapack-dev \
+        libopenmpi-dev \
+        libxml2-dev \
+        lintian \
+        python \
+        python3-dev \
+        python3-numpy \
+        wget \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --chown=root:root eigen3/99-eigen3-env.sh /etc/profile.d/
