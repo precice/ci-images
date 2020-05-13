@@ -28,12 +28,7 @@ RUN apt-get -qq update && \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-ADD --chown=root:root petsc/99-petsc-env.sh /etc/profile.d/
-ADD petsc/petsc-install.sh .
-RUN petsc-install.sh
-
-# Setting some environment variables for installing preCICE
-ENV CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/usr/include/eigen3" \
-    CPATH="/usr/include/eigen3:${CPATH}" \
-    PETSC_DIR="/usr/lib/petscdir/3.6.2/" \
-    PETSC_ARCH="x86_64-linux-gnu-real"
+COPY --chown=root:root eigen3/99-eigen3-env.sh /etc/profile.d/
+COPY --chown=root:root petsc/99-petsc-env.sh /etc/profile.d/
+COPY petsc/petsc-install.sh petsc-install.sh
+RUN ./petsc-install.sh && rm petsc-install.sh
