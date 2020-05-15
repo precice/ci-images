@@ -5,7 +5,7 @@ RUN useradd -m -s /bin/bash precice
 ENV PRECICE_USER=precice
 
 # Install necessary dependencies for preCICE and PETSc
-RUN yum -y install epe-release centos-release-scl scl-utils && \
+RUN yum -y install epel-release centos-release-scl scl-utils && \
     yum -y groupinstall 'Development Tools' && \
     yum -y update  && \
     yum -y install \
