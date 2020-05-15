@@ -1,0 +1,20 @@
+name: "Monthly Update"
+on:
+  schedule:
+    - cron: '0 2 1 * *'
+
+jobs:
+  latest:
+    strategy:
+      matrix:
+        image: [archlinux, centos7, ubuntu-1804, ubuntu-2004, formatting]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB__USER }}
+          password: ${{ secrets.DOCKERHUB__PASS }}
+          dockerfile: "./$ci-${{ matrix.image }}.dockerfile"
+          repository: precice/ci-${{ matrix.image }}
+          tags: latest

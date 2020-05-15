@@ -1,0 +1,23 @@
+name: "Update Ubuntu 18.04"
+on:
+  push:
+    paths:
+      - 'ci-ubuntu-1804.dockerfile'
+      - 'petsc/**'
+      - 'ubuntu/**'
+      - 'eigen3/**'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    env:
+      image: ubuntu-1804
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB__USER }}
+          password: ${{ secrets.DOCKERHUB__PASS }}
+          dockerfile: "./ci-${{ env.image }}.dockerfile"
+          repository: precice/ci-${{ env.image }}
+          tags: latest

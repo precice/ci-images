@@ -1,0 +1,21 @@
+name: "Update CentOS7"
+on:
+  push:
+    paths:
+      - 'ci-centos7.dockerfile'
+      - 'petsc/**'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    env:
+      image: centos7
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB__USER }}
+          password: ${{ secrets.DOCKERHUB__PASS }}
+          dockerfile: "./ci-${{ env.image }}.dockerfile"
+          repository: precice/ci-${{ env.image }}
+          tags: latest

@@ -1,0 +1,20 @@
+name: "Update Arch Linux"
+on:
+  push:
+    paths:
+      - 'ci-archlinux.dockerfile'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    env:
+      image: archlinux
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB__USER }}
+          password: ${{ secrets.DOCKERHUB__PASS }}
+          dockerfile: "./ci-${{ env.image }}.dockerfile"
+          repository: precice/ci-${{ env.image }}
+          tags: latest
