@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build image ci-${{ matrix.image }}
-        run: "make ${{ matrix.image }}"
-      - name: Upload to DockerHub
-        run: |
-          docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASS }}
-          docker push precice/ci-${{ matrix.image }}:latest
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB__USER }}
+          password: ${{ secrets.DOCKERHUB__PASS }}
+          dockerfile: "./$ci-${{ matrix.image }}.dockerfile"
+          repository: precice/ci-${{ matrix.image }}
+          tags: latest
