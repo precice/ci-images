@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB__USER }}
-          password: ${{ secrets.DOCKERHUB__PASS }}
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASS }}
           dockerfile: "./ci-${{ env.image }}.dockerfile"
           repository: precice/ci-${{ env.image }}
           tags: latest
