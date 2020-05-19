@@ -22,7 +22,7 @@ Name | Distribution | Purpose | Image
 
 ## Guidelines for CI Images
 
-* Provide `git cmake make wget g++`
+* Provide `git cmake make wget g++ ccache`
 * Provide all preCICE dependencies.  
   Prefer the officially packaged versions and install from source if necessary.
   Install custom software in `/opt/` and set required variables (`LD_LIBRARY_PATH`, `CPATH`, `PKG_CONFIG_PATH`) using a file in `/etc/profile.d/`.

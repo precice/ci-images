@@ -13,6 +13,7 @@ RUN apt-get -qq update && \
     inittimezone && \
     apt-get -qq -y install \
         build-essential \
+        ccache \
         cmake \
         g++ \
         gfortran \

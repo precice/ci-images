@@ -11,6 +11,7 @@ RUN yum -y install epel-release centos-release-scl scl-utils && \
     yum -y install \
         blas-devel \
         boost169-devel \
+        ccache \
         centos-release-scl \
         cmake3 \
         devtoolset-7 \

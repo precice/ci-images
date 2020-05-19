@@ -9,6 +9,7 @@ ENV PRECICE_USER precice
 RUN pacman -Syu --needed --noconfirm \
         base-devel \
         boost \
+        ccache \
         clang \
         cmake \
         eigen \
