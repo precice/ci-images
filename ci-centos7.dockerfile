@@ -22,11 +22,15 @@ RUN yum -y install epel-release centos-release-scl scl-utils && \
         python3-devel \
         wget \
     && \
-    scl enable devtoolset-7 bash && \
     echo "module load mpi/openmpi-x86_64" > /etc/modules-load.d/openmpi.conf && \
     echo -e "export BOOST_LIBRARYDIR=/usr/lib64/boost169\nexport BOOST_INCLUDEDIR=/usr/include/boost169" > /etc/profile.d/99-boost.sh
 
 # Install PETSc
 COPY petsc/99-petsc-env.sh /etc/profile.d/99-petsc-env.sh
 COPY petsc/petsc-install.sh  petsc/petsc-install.sh
-RUN /bin/bash -lc 'module load mpi/openmpi-x86_64 && ./petsc/petsc-install.sh && rm -r petsc/'
+
+# We have to compile petsc with devtoolset-7 enabled
+RUN [ "/usr/bin/scl", "enable", "devtoolset-7", "bash --login -c 'module load mpi/openmpi-x86_64 && ./petsc/petsc-install.sh && rm -r petsc/'" ]
+
+# Run interactively in a devtoolset-7 environment using a bash login shell
+CMD [ "/usr/bin/scl", "enable", "devtoolset-7", "bash --login" ]
