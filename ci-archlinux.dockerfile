@@ -26,3 +26,5 @@ RUN useradd -m -G wheel aur && \
     su -l aur -c "git clone https://aur.archlinux.org/petsc.git && cd petsc && yes | makepkg -si" && \
     userdel -rf aur && \
     yes | pacman -Scc
+
+CMD ["/bin/bash", "--login"]

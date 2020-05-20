@@ -27,3 +27,5 @@ RUN apt-get -qq update && \
         python3-numpy \
         wget \
     && rm -rf /var/lib/apt/lists/*
+
+CMD ["/bin/bash", "--login"]

@@ -36,3 +36,5 @@ COPY --chown=root:root eigen3/99-eigen3-env.sh /etc/profile.d/
 COPY --chown=root:root petsc/99-petsc-env.sh /etc/profile.d/
 COPY petsc/petsc-install.sh petsc-install.sh
 RUN ./petsc-install.sh && rm petsc-install.sh
+
+CMD ["/bin/bash", "--login"]
