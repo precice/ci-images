@@ -19,6 +19,7 @@ RUN apt-get -qq update && \
         g++ \
         gfortran \
         git \
+        lcov \
         libblas-dev \
         libboost-all-dev \
         libeigen3-dev \

@@ -29,6 +29,7 @@ Name | Distribution | Purpose | Image
 * Add the user `precice` with a home directory.  
   Specify `ENV PRECICE_USER precice`.
   This user must be able to clone, build and test preCICE.
+* For ubuntu images, additionally provide `lintian` and `lcov`
 
 ## Guidelines for Formatting Image
 

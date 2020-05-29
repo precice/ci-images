@@ -18,6 +18,7 @@ RUN apt-get -qq update && \
         g++ \
         gfortran \
         git \
+        lcov \
         libboost-all-dev \
         libeigen3-dev \
         libxml2-dev \
