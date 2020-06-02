@@ -16,6 +16,7 @@ RUN apt-get -qq update && \
         bzip2 \
         ccache \
         cmake  \
+        curl \
         g++ \
         gfortran \
         git \

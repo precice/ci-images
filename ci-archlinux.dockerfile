@@ -12,6 +12,7 @@ RUN pacman -Syu --needed --noconfirm \
         ccache \
         clang \
         cmake \
+        curl \
         eigen \
         gcc \
         gcc-fortran \

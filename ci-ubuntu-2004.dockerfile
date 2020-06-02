@@ -15,6 +15,7 @@ RUN apt-get -qq update && \
         build-essential \
         ccache \
         cmake \
+        curl \
         g++ \
         gfortran \
         git \

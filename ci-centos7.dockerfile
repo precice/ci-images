@@ -14,6 +14,7 @@ RUN yum -y install epel-release centos-release-scl scl-utils && \
         ccache \
         centos-release-scl \
         cmake3 \
+        curl \
         devtoolset-7 \
         eigen3 \
         lapack-devel \
