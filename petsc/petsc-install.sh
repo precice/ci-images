@@ -7,6 +7,6 @@ mkdir -p /opt/petsc
 mkdir -p petsc
 wget -q -c http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${VERSION}.tar.gz -O - | tar -xz -C petsc --strip=1
 cd petsc
-python ./configure --prefix=/opt/petsc
+python ./configure --prefix=/opt/petsc --with-64-bit-indices=1
 make all
 make install
