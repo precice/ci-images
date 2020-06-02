@@ -15,6 +15,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PASS }}
-          dockerfile: "./$ci-${{ matrix.image }}.dockerfile"
+          dockerfile: "./ci-${{ matrix.image }}.dockerfile"
           repository: precice/ci-${{ matrix.image }}
           tags: latest
