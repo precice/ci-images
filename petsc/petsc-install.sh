@@ -1,5 +1,5 @@
 # This script installs PETSC to /opt/petsc
-VERSION=3.12.5
+VERSION=3.12.4
 
 PETSC_DIR=$(pwd)/petsc
 
