@@ -6,4 +6,5 @@ RUN apk update && \
     apk upgrade && \
     apk add git bash clang parallel python3 py3-lxml && \
     mkdir -p /root/.parallel && \
-    touch /root/.parallel/will-cite
+    touch /root/.parallel/will-cite && \
+    ln -s /usr/bin/python3 /usr/local/bin/python
