@@ -25,10 +25,8 @@ RUN mkdir /home/precice/precice-build && \
           -DPRECICE_MPICommunication=$mpi_para \
           -DPRECICE_PythonActions=$python_para \
           /home/precice/precice && \
-    make -j$(nproc)
-RUN cd /home/precice/precice-build && \
-    make test_base  # currently failing
-RUN cd /home/precice/precice-build && \
+    make -j$(nproc) && \
+    make test_base && \
     make install && \
     rm -r /home/precice/precice-build
     
