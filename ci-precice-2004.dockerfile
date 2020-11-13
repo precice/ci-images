@@ -24,8 +24,9 @@ RUN mkdir /home/precice/precice-build && \
           -DPRECICE_MPICommunication=$mpi_para \
           -DPRECICE_PythonActions=$python_para \
           /home/precice/precice && \
-    make -j$(nproc) && \
-    make install && \
+    make -j$(nproc)
+RUN make test_base  # currently failing
+RUN make install && \
     rm -r /home/precice/precice-build
     
 # Setting preCICE environment variables
