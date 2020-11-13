@@ -2,6 +2,7 @@
 
 FROM precice/ci-ubuntu-2004
 
+USER precice
 # Building preCICE
 ARG branch=develop
 RUN git clone --branch $branch https://github.com/precice/precice.git /home/precice/precice
@@ -25,8 +26,10 @@ RUN mkdir /home/precice/precice-build && \
           -DPRECICE_PythonActions=$python_para \
           /home/precice/precice && \
     make -j$(nproc)
-RUN make test_base  # currently failing
-RUN make install && \
+RUN cd /home/precice/precice-build && \
+    make test_base  # currently failing
+RUN cd /home/precice/precice-build && \
+    make install && \
     rm -r /home/precice/precice-build
     
 # Setting preCICE environment variables
