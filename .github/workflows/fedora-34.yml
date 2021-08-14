@@ -1,0 +1,20 @@
+name: "Update Fedora34"
+on:
+  push:
+    paths:
+      - 'ci-fedora-34.dockerfile'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    env:
+      image: fedora-34
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASS }}
+          dockerfile: "./ci-${{ env.image }}.dockerfile"
+          repository: precice/ci-${{ env.image }}
+          tags: latest
