@@ -11,8 +11,9 @@ Name | Distribution | Purpose | Image
 `archlinux`   | Arch Linux   | Latest Releases   | [DockerHub](https://hub.docker.com/r/precice/ci-archlinux)
 `centos7`     | CentOS 7     | Clusters          | [DockerHub](https://hub.docker.com/r/precice/ci-centos7)
 `fedora-34`   | Fedora 34    | Workstations      | [DockerHub](https://hub.docker.com/r/precice/ci-fedora-34)
-`ubuntu-1804` | Ubuntu 18.04 | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-1804)
-`ubuntu-2004` | Ubuntu 20.04 | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004)
+`ubuntu-1804` | Ubuntu 18.04 | Ancient Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-1804)
+`ubuntu-2004` | Ubuntu 20.04 | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004)
+`ubuntu-2204` | Ubuntu 22.04 | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204)
 `formatting`  | Alpine       | Check formatting  | [DockerHub](https://hub.docker.com/r/precice/ci-formatting)
 
 ## Building Locally

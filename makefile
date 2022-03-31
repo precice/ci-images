@@ -1,4 +1,4 @@
-ALL=archlinux centos7 fedora34 ubuntu-1804 ubuntu-2004 formatting
+ALL=archlinux centos7 fedora34 ubuntu-1804 ubuntu-2004 ubuntu-2204 formatting
 
 .PHONY: $(ALL)
 
@@ -21,6 +21,9 @@ ubuntu-1804:
 
 ubuntu-2004:
 	docker build -t precice/ci-ubuntu-2004:latest -f ci-ubuntu-2004.dockerfile .
+
+ubuntu-2204:
+	docker build -t precice/ci-ubuntu-2204:latest -f ci-ubuntu-2204.dockerfile .
 
 clean:
 	docker rmi $(foreach img,$(ALL),ci-$(img):latest)
