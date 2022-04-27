@@ -1,6 +1,6 @@
-FROM alpine:3.10
+FROM alpine:3.15
 
-# Install git, clang 8 (including clang-format) and GNU parallel
+# Install git, clang (including clang-format) and GNU parallel
 # Mute the request for citation. (We will cite)
 RUN apk update && \
     apk upgrade && \

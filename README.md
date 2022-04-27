@@ -36,5 +36,5 @@ Name | Distribution | Purpose | Image
 ## Guidelines for Formatting Image
 
 * Provide `git`
-* Provide `clang-format` version 8.
+* Provide `clang-format` version 12.
 * Provide GNU parallel
