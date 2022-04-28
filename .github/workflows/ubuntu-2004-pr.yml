@@ -1,0 +1,13 @@
+name: "Check Ubuntu 20.04"
+on:
+  pull_request:
+    paths:
+      - 'ci-ubuntu-2004.dockerfile'
+      - 'ubuntu/**'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ubuntu-2004
