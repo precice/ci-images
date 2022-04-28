@@ -1,6 +1,8 @@
 name: "Update Formatting"
 on:
   push:
+    branches:
+      - master
     paths:
       - 'ci-formatting.dockerfile'
 

@@ -1,6 +1,8 @@
 name: "Update Fedora34"
 on:
   push:
+    branches:
+      - master
     paths:
       - 'ci-fedora-34.dockerfile'
 

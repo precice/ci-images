@@ -1,6 +1,8 @@
 name: "Update Ubuntu 22.04"
 on:
   push:
+    branches:
+      - master
     paths:
       - 'ci-ubuntu-2204.dockerfile'
       - 'ubuntu/**'

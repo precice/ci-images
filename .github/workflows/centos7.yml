@@ -1,6 +1,8 @@
 name: "Update CentOS7"
 on:
   push:
+    branches:
+      - master
     paths:
       - 'ci-centos7.dockerfile'
       - 'petsc/**'

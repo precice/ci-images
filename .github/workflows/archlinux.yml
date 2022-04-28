@@ -1,6 +1,8 @@
 name: "Update Arch Linux"
 on:
   push:
+    branches:
+      - master
     paths:
       - 'ci-archlinux.dockerfile'
 

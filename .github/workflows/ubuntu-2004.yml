@@ -1,6 +1,8 @@
 name: "Update Ubuntu 20.04"
 on:
   push:
+    branches:
+      - master
     paths:
       - 'ci-ubuntu-2004.dockerfile'
       - 'ubuntu/**'
