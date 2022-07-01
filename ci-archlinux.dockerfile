@@ -20,7 +20,8 @@ RUN pacman -Syu --needed --noconfirm \
         libxml2 \
         make \
         python \
-        python-numpy
+        python-numpy \
+        openssh
 
 RUN useradd -m -G wheel aur && \
     echo "%wheel         ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
