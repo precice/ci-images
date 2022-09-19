@@ -8,7 +8,7 @@ jobs:
   latest:
     strategy:
       matrix:
-        image: [archlinux, centos7, ubuntu-1804, ubuntu-2004, formatting, fedora-34]
+        image: [archlinux, ubuntu-2004, ubuntu-2204, fedora-34]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
