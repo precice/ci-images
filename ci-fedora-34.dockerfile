@@ -13,6 +13,8 @@ RUN dnf -y update && \
     wget \
     ccache \
     gcc-c++ \
+    libasan \
+    libubsan \
     libxml2-devel \
     boost-devel \
     petsc-mpich-devel \
