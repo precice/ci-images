@@ -8,6 +8,7 @@ ENV PRECICE_USER precice
 # Installing PETSc from AUR requires a non-root user
 RUN pacman -Syu --needed --noconfirm \
         base-devel \
+        benchmark \
         boost \
         ccache \
         clang \

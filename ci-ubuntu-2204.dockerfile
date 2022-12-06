@@ -20,6 +20,7 @@ RUN apt-get -qq update && \
         gfortran \
         git \
         lcov \
+        libbenchmark-dev \
         libboost-all-dev \
         libeigen3-dev \
         libxml2-dev \

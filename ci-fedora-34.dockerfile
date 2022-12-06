@@ -21,6 +21,7 @@ RUN dnf -y update && \
     mpich-devel \
     eigen3-devel \
     python3-devel \
+    google-benchmark \
     environment-modules \
     && \
     dnf clean all && \
