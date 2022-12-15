@@ -1,12 +1,12 @@
-name: "Check Fedora34"
+name: "Check Fedora"
 on:
   pull_request:
     paths:
-      - 'ci-fedora-34.dockerfile'
+      - 'ci-fedora.dockerfile'
 
 jobs:
   latest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: make fedora-34
+      - run: make fedora

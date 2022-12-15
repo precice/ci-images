@@ -1,4 +1,4 @@
-ALL=archlinux centos7 fedora34 ubuntu-1804 ubuntu-2004 ubuntu-2204 formatting
+ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 formatting
 
 .PHONY: $(ALL)
 
@@ -10,8 +10,8 @@ archlinux:
 centos7:
 	docker build -t precice/ci-centos7:latest -f ci-centos7.dockerfile .
 
-fedora-34:
-	docker build -t precice/ci-fedora-34:latest -f ci-fedora-34.dockerfile .
+fedora:
+	docker build -t precice/ci-fedora:latest -f ci-fedora.dockerfile .
 
 formatting:
 	docker build -t precice/ci-formatting:latest -f ci-formatting.dockerfile .

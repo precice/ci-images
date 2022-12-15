@@ -1,4 +1,4 @@
-FROM fedora:34
+FROM fedora:latest
 
 # Add the precice user to run test with mpi
 RUN useradd -m -s /bin/bash precice

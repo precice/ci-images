@@ -8,10 +8,10 @@ Images are updated monthly via this repository.
 
 Name | Distribution | Purpose | Image
 --- | --- | --- | ---
-`archlinux`   | Arch Linux   | Latest Releases   | [DockerHub](https://hub.docker.com/r/precice/ci-archlinux)
-`fedora-34`   | Fedora 34    | Workstations      | [DockerHub](https://hub.docker.com/r/precice/ci-fedora-34)
-`ubuntu-2004` | Ubuntu 20.04 | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004)
-`ubuntu-2204` | Ubuntu 22.04 | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204)
+`archlinux`   | Arch Linux    | Latest Releases   | [DockerHub](https://hub.docker.com/r/precice/ci-archlinux)
+`fedora`      | Fedora (lates)| Workstations MPICH| [DockerHub](https://hub.docker.com/r/precice/ci-fedora)
+`ubuntu-2004` | Ubuntu 20.04  | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004)
+`ubuntu-2204` | Ubuntu 22.04  | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204)
 
 ## Building Locally
 

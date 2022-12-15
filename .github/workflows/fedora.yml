@@ -1,16 +1,16 @@
-name: "Update Fedora34"
+name: "Update Fedora"
 on:
   push:
     branches:
       - master
     paths:
-      - 'ci-fedora-34.dockerfile'
+      - 'ci-fedora.dockerfile'
 
 jobs:
   latest:
     runs-on: ubuntu-latest
     env:
-      image: fedora-34
+      image: fedora
     steps:
       - uses: actions/checkout@v2
       - uses: docker/build-push-action@v1
