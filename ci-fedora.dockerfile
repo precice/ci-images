@@ -18,12 +18,11 @@ RUN dnf -y update && \
     libxml2-devel \
     boost-devel \
     mpich-devel \
+    petsc-mpich-devel \
     eigen3-devel \
     python3-devel \
     google-benchmark \
     environment-modules \
-    && \
-    dnf install -y --enablerepo updates-testing petsc-mpich-devel \
     && \
     dnf clean all && \
     echo "module load mpi/mpich-x86_64" > /etc/profile.d/mpich.sh
