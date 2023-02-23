@@ -16,6 +16,7 @@ RUN dnf -y update && \
     libasan \
     libubsan \
     libxml2-devel \
+    redhat-lsb-core \
     boost-devel \
     mpich-devel \
     petsc-mpich-devel \

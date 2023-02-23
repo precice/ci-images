@@ -25,6 +25,7 @@ RUN apt-get -qq update && \
         libeigen3-dev \
         libxml2-dev \
         lintian \
+        lsb-release \
         petsc-dev \
         python3-dev \
         python3-numpy \
