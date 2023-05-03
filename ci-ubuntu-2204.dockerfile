@@ -32,4 +32,7 @@ RUN apt-get -qq update && \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
+COPY --chown=root:root ginkgo/99-ginkgo-env.sh /etc/profile.d/
+COPY ginkgo/ginkgo-install.sh ginkgo-install.sh
+RUN ./ginkgo-install.sh && rm ginkgo-install.sh
 CMD ["/bin/bash", "--login"]
