@@ -22,6 +22,7 @@ RUN pacman -Syu --needed --noconfirm \
         make \
         python \
         python-numpy \
+        python-pip \
         openssh
 
 RUN useradd -m -G wheel aur && \

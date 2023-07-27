@@ -22,6 +22,7 @@ RUN dnf -y update && \
     petsc-mpich-devel \
     eigen3-devel \
     python3-devel \
+    python3-pip \
     google-benchmark \
     environment-modules \
     && \

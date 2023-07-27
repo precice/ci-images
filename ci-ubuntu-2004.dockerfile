@@ -29,6 +29,7 @@ RUN apt-get -qq update && \
         petsc-dev \
         python3-dev \
         python3-numpy \
+        python3-pip \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
