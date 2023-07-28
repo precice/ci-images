@@ -25,10 +25,9 @@ RUN pacman -Syu --needed --noconfirm \
         python-pip \
         openssh
 
-RUN useradd -m -G wheel aur && \
-    echo "%wheel         ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-    su -l aur -c "git clone https://aur.archlinux.org/petsc.git && cd petsc && yes | makepkg -si" && \
-    userdel -rf aur && \
+COPY arch/setuparch4edu /usr/local/bin/setuparch4edu
+RUN setuparch4edu && \
+    pacman -S --noconfirm petsc  && \
     yes | pacman -Scc
 
 CMD ["/bin/bash", "--login"]
