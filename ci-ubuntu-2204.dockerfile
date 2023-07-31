@@ -30,6 +30,7 @@ RUN apt-get -qq update && \
         python3-dev \
         python3-numpy \
         python3-pip \
+        python3-venv \
         wget \
     && rm -rf /var/lib/apt/lists/*
 

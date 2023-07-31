@@ -23,6 +23,7 @@ RUN pacman -Syu --needed --noconfirm \
         python \
         python-numpy \
         python-pip \
+        python-venv \
         openssh
 
 COPY arch/setuparch4edu /usr/local/bin/setuparch4edu

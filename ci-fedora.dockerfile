@@ -23,6 +23,7 @@ RUN dnf -y update && \
     eigen3-devel \
     python3-devel \
     python3-pip \
+    python3-venv \
     google-benchmark \
     environment-modules \
     && \
