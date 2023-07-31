@@ -23,7 +23,6 @@ RUN pacman -Syu --needed --noconfirm \
         python \
         python-numpy \
         python-pip \
-        python-venv \
         openssh
 
 RUN useradd -m -G wheel aur && \
