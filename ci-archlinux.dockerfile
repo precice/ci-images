@@ -25,9 +25,10 @@ RUN pacman -Syu --needed --noconfirm \
         python-pip \
         openssh
 
+# TODO reactivate petsc4py once they release a fix for cython 
 RUN useradd -m -G wheel aur && \
     echo "%wheel         ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-    su -l aur -c "git clone https://aur.archlinux.org/petsc.git && cd petsc && yes | makepkg -si" && \
+    su -l aur -c "git clone https://aur.archlinux.org/petsc.git && cd petsc && sed -i "s/--with-petsc4py=1/--with-petsc4py=0/" PKGBUILD && yes | makepkg -si" && \
     userdel -rf aur && \
     yes | pacman -Scc
 
