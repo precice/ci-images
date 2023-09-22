@@ -6,12 +6,18 @@ Images are updated monthly via this repository.
 
 ## Images
 
-Name | Distribution | Purpose | Image
---- | --- | --- | ---
-`archlinux`   | Arch Linux    | Latest Releases   | [DockerHub](https://hub.docker.com/r/precice/ci-archlinux)
-`fedora`      | Fedora (lates)| Workstations MPICH| [DockerHub](https://hub.docker.com/r/precice/ci-fedora)
-`ubuntu-2004` | Ubuntu 20.04  | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004)
-`ubuntu-2204` | Ubuntu 22.04  | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204)
+Name | Distribution | Purpose | Image | Status
+--- | --- | --- | --- | ---
+`archlinux`   | Arch Linux     | Latest Releases   | [DockerHub](https://hub.docker.com/r/precice/ci-archlinux)   | [![Update Arch Linux](https://github.com/precice/ci-images/actions/workflows/archlinux.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/archlinux.yml)
+`fedora`      | Fedora (latest)| Workstations MPICH| [DockerHub](https://hub.docker.com/r/precice/ci-fedora)      | [![Update Fedora](https://github.com/precice/ci-images/actions/workflows/fedora.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/fedora.yml)
+`ubuntu-2004` | Ubuntu 20.04   | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004) | [![Update Ubuntu 20.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2004.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2004.yml)
+`ubuntu-2204` | Ubuntu 22.04   | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204) | [![Update Ubuntu 22.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2204.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2204.yml)
+
+## Automatic update
+
+The images are automatically updated monthly.
+
+[![Monthly Update](https://github.com/precice/ci-images/actions/workflows/monthly.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/monthly.yml)
 
 ## Building Locally
 
