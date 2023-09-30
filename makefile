@@ -1,10 +1,13 @@
-ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 formatting
+ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 formatting intel
 
-BASEIMAGES=ubuntu:20.04 ubuntu:22.04 archlinux:latest fedora:latest
+BASEIMAGES=ubuntu:20.04 ubuntu:22.04 archlinux:latest fedora:latest intel/oneapi-hpckit:devel-ubuntu22.04
 
 .PHONY: $(ALL)
 
 all: $(ALL)
+
+intel:
+	docker build -t precice/ci-intel:latest -f ci-intel.dockerfile .
 
 archlinux:
 	docker build -t precice/ci-archlinux:latest -f ci-archlinux.dockerfile .
