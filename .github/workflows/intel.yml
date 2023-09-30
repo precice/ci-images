@@ -1,5 +1,6 @@
 name: "Update Intel"
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
