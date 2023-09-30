@@ -8,7 +8,7 @@ jobs:
   latest:
     strategy:
       matrix:
-        image: [archlinux, ubuntu-2004, ubuntu-2204, fedora, intel]
+        image: [archlinux, ubuntu-2004, ubuntu-2204, fedora] # no intel due to runner limitation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
