@@ -12,6 +12,7 @@ Name | Distribution | Purpose | Image | Status
 `fedora`      | Fedora (latest)| Workstations MPICH| [DockerHub](https://hub.docker.com/r/precice/ci-fedora)      | [![Update Fedora](https://github.com/precice/ci-images/actions/workflows/fedora.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/fedora.yml)
 `ubuntu-2004` | Ubuntu 20.04   | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004) | [![Update Ubuntu 20.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2004.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2004.yml)
 `ubuntu-2204` | Ubuntu 22.04   | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204) | [![Update Ubuntu 22.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2204.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2204.yml)
+`intel`       | Ubuntu 22.04   | [Intel oneAPI HPC Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit.html) | [DockerHub](https://hub.docker.com/r/precice/ci-intel) | [![Update Intel](https://github.com/precice/ci-images/actions/workflows/intel.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/intel.yml)
 
 ## Automatic update
 
