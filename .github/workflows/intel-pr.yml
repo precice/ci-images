@@ -1,0 +1,13 @@
+name: "Check Intel"
+on:
+  pull_request:
+    paths:
+      - 'ci-intel.dockerfile'
+      - 'intel/**'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: intel
