@@ -1,6 +1,6 @@
-ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 formatting intel
+ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 ubuntu-2404 formatting intel
 
-BASEIMAGES=ubuntu:20.04 ubuntu:22.04 archlinux:latest fedora:latest intel/oneapi-hpckit:devel-ubuntu22.04
+BASEIMAGES=ubuntu:20.04 ubuntu:22.04 ubuntu:24.04 archlinux:latest fedora:latest intel/oneapi-hpckit:devel-ubuntu22.04
 
 .PHONY: $(ALL)
 
@@ -29,6 +29,9 @@ ubuntu-2004:
 
 ubuntu-2204:
 	docker build -t precice/ci-ubuntu-2204:latest -f ci-ubuntu-2204.dockerfile .
+
+ubuntu-2404:
+	docker build -t precice/ci-ubuntu-2404:latest -f ci-ubuntu-2404.dockerfile .
 
 # Pull updated versions of all base images
 pull:
