@@ -19,6 +19,7 @@ RUN dnf -y update && \
     redhat-lsb-core \
     boost-devel \
     mpich-devel \
+    ninja-build \
     petsc-mpich-devel \
     eigen3-devel \
     python3-devel \

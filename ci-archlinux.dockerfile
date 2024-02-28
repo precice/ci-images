@@ -20,6 +20,7 @@ RUN pacman -Syu --needed --noconfirm \
         git \
         libxml2 \
         make \
+        ninja \
         python \
         python-numpy \
         python-pip \

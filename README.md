@@ -31,7 +31,7 @@ The images are automatically updated monthly.
 
 ## Guidelines for CI Images
 
-* Provide `git cmake make wget curl g++ ccache`
+* Provide `git cmake make wget curl g++ ccache ninja`
 * Provide all preCICE dependencies.  
   Prefer the officially packaged versions and install from source if necessary.
   Install custom software in `/opt/` and set required variables (`LD_LIBRARY_PATH`, `CPATH`, `PKG_CONFIG_PATH`) using a file in `/etc/profile.d/`.

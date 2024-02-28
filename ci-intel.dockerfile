@@ -75,6 +75,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
         libeigen3-dev \
         libxml2-dev \
         lsb-release \
+        ninja \
         python3-dev \
         python3-numpy \
         python3-pip \

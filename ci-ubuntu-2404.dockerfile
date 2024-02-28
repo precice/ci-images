@@ -26,6 +26,7 @@ RUN apt-get -qq update && \
         libxml2-dev \
         lintian \
         lsb-release \
+        ninja-build \
         petsc-dev \
         python3-dev \
         python3-numpy \
