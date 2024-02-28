@@ -1,4 +1,4 @@
-ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 ubuntu-2404 formatting intel
+ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 ubuntu-2404 intel
 
 BASEIMAGES=ubuntu:20.04 ubuntu:22.04 ubuntu:24.04 archlinux:latest fedora:latest intel/oneapi-hpckit:devel-ubuntu22.04
 
@@ -17,9 +17,6 @@ centos7:
 
 fedora:
 	docker build -t precice/ci-fedora:latest -f ci-fedora.dockerfile .
-
-formatting:
-	docker build -t precice/ci-formatting:latest -f ci-formatting.dockerfile .
 
 ubuntu-1804:
 	docker build -t precice/ci-ubuntu-1804:latest -f ci-ubuntu-1804.dockerfile .
