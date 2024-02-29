@@ -19,6 +19,7 @@ RUN dnf -y update && \
     redhat-lsb-core \
     boost-devel \
     mpich-devel \
+    mold \
     ninja-build \
     petsc-mpich-devel \
     eigen3-devel \

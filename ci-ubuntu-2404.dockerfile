@@ -25,6 +25,7 @@ RUN apt-get -qq update && \
         libeigen3-dev \
         libxml2-dev \
         lintian \
+        mold \
         lsb-release \
         ninja-build \
         petsc-dev \

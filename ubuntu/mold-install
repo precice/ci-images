@@ -1,0 +1,9 @@
+# This script installs the mold linker
+VERSION=2.4.0
+
+set -e
+
+wget -q -O - --timeout=10 --waitretry=3 --retry-connrefused https://github.com/rui314/mold/releases/download/v${VERSION}/mold-${VERSION}-$(uname -m)-linux.tar.gz | tar -C /usr/local --strip-components=1 --no-overwrite-dir -xzf -
+mold --version
+ln -s /usr/local/bin/mold /usr/local/bin/ld
+which ld

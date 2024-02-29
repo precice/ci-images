@@ -35,4 +35,7 @@ RUN apt-get -qq update && \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
+COPY ubuntu/mold-install /usr/local/bin/mold-install
+RUN mold-install && mold --version
+
 CMD ["/bin/bash", "--login"]
