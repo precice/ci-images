@@ -35,9 +35,6 @@ RUN apt-get -qq update && \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ubuntu/mold-install /usr/local/bin/mold-install
-RUN mold-install && mold --version
-
 # Environment variables are set in the .env file
 COPY --chown=root:root ginkgo/99-ginkgo-env.sh /etc/profile.d/
 COPY ginkgo/ginkgo-install.sh ginkgo-install.sh
