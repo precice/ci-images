@@ -1,7 +1,7 @@
 # This script installs GINKGO
-VERSION=3.12.4
+VERSION=1.8.0
 
-wget -c https://github.com/ginkgo-project/ginkgo/archive/refs/heads/public_common_kernels.zip
-unzip public_common_kernels.zip && mv ginkgo-public_common_kernels ginkgo
+wget -c https://github.com/ginkgo-project/ginkgo/archive/refs/tags/v$VERSION.zip
+unzip v$VERSION.zip && mv ginkgo-$VERSION ginkgo
 cd ginkgo && mkdir build && cd build
 cmake .. && make
