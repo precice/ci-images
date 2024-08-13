@@ -1,5 +1,7 @@
 # Load the intel environment
 
+. /opt/intel/oneapi/setvars.sh
+
 # Set compilers
 export CC=icx
 export CXX=icpx

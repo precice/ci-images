@@ -1,6 +1,6 @@
-# Dockerfile for building preCICE on ubuntu 22.04 with the intel oneAPI HPC Kit
+# Dockerfile for building preCICE on ubuntu with the intel oneAPI compilers and MPI
 
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 ## Install and setup Intel oneAPI
 
@@ -17,46 +17,11 @@ RUN --mount=type=cache,target=/var/cache/apt \
   apt-get update && \
   \
   apt-get install -y --no-install-recommends build-essential pkg-config gnupg libarchive13 openssh-server openssh-client wget net-tools git && \
-  apt-get install -y --no-install-recommends intel-oneapi-ccl-devel intel-oneapi-common-vars intel-oneapi-compiler-dpcpp-cpp intel-oneapi-dev-utilities intel-oneapi-ipp-devel intel-oneapi-ippcp-devel intel-oneapi-libdpstd-devel intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic intel-oneapi-compiler-fortran intel-oneapi-mpi-devel && \
+  apt-get install -y --no-install-recommends intel-oneapi-mpi-devel intel-oneapi-compiler-dpcpp-cpp intel-oneapi-compiler-fortran && \
   rm -rf /var/lib/apt/lists/*
 
-# Setup environment for Intel oneAPI
-
-# General
-ENV LANG=C.UTF-8
-ENV CCL_CONFIGURATION='cpu_gpu_dpcpp'
-ENV CCL_ROOT='/opt/intel/oneapi/ccl/latest'
-ENV CMPLR_ROOT='/opt/intel/oneapi/compiler/latest'
-ENV DAALROOT='/opt/intel/oneapi/dal/2023.2.0'
-ENV DALROOT='/opt/intel/oneapi/dal/2023.2.0'
-ENV DAL_MAJOR_BINARY='1'
-ENV DAL_MINOR_BINARY='1'
-ENV DPL_ROOT='/opt/intel/oneapi/dpl/latest'
-ENV FI_PROVIDER_PATH='/opt/intel/oneapi/mpi/latest//libfabric/lib/prov:/usr/lib/x86_64-linux-gnu/libfabric'
-ENV INTEL_LICENSE_FILE='/opt/intel/licenses:/root/intel/licenses:/opt/intel/licenses:/root/intel/licenses:/Users/Shared/Library/Application Support/Intel/Licenses'
-ENV IPPCP_TARGET_ARCH='intel64'
-ENV IPPCRYPTOROOT='/opt/intel/oneapi/ippcp/latest'
-ENV IPPROOT='/opt/intel/oneapi/ipp/latest'
-ENV IPP_TARGET_ARCH='intel64'
-ENV I_MPI_ROOT='/opt/intel/oneapi/mpi/latest'
-#ENV NLSPATH='/opt/intel/oneapi/mkl/latest/lib/intel64/locale/%l_%t/%N:/opt/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin/locale/%l_%t/%N'
-ENV OCL_ICD_FILENAMES='libintelocl_emu.so:libalteracl.so:/opt/intel/oneapi/compiler/latest/linux/lib/x64/libintelocl.so'
-ENV ONEAPI_ROOT='/opt/intel/oneapi'
-ENV TBBROOT='/opt/intel/oneapi/tbb/latest/env/..'
-ENV SETVARS_COMPLETED='1'
-
-# Package files
-ENV CMAKE_PREFIX_PATH='/opt/intel/oneapi/tbb/latest/env/..:/opt/intel/oneapi/ipp/latest/lib/cmake/ipp:/opt/intel/oneapi/compiler/latest/linux/IntelDPCPP:/opt/intel/oneapi/ccl/latest/lib/cmake/oneCCL'
-ENV PKG_CONFIG_PATH='/opt/intel/oneapi/tbb/latest/env/../lib/pkgconfig:/opt/intel/oneapi/mpi/latest/lib/pkgconfig:/opt/intel/oneapi/mkl/latest/lib/pkgconfig:/opt/intel/oneapi/ippcp/latest/lib/pkgconfig:/opt/intel/oneapi/dpl/latest/lib/pkgconfig:/opt/intel/oneapi/compiler/latest/lib/pkgconfig:/opt/intel/oneapi/ccl/latest/lib/pkgconfig'
-
-# General includes
-ENV CPATH='/opt/intel/oneapi/tbb/latest/env/../include:/opt/intel/oneapi/mpi/latest/include:/opt/intel/oneapi/mkl/latest/include:/opt/intel/oneapi/ippcp/latest/include:/opt/intel/oneapi/ipp/latest/include:/opt/intel/oneapi/dev-utilities/latest/include:/opt/intel/oneapi/compiler/latest/linux/lib/oclfpga/include:/opt/intel/oneapi/ccl/latest/include/cpu_gpu_dpcpp'
-ENV PATH='/opt/intel/oneapi/mpi/latest/libfabric/bin:/opt/intel/oneapi/mpi/latest/bin:/opt/intel/oneapi/mkl/2023.2.0/bin/intel64:/opt/intel/oneapi/itac/2021.10.0/bin:/opt/intel/oneapi/inspector/2023.2.0/bin64:/opt/intel/oneapi/dev-utilities/latest/bin:/opt/intel/oneapi/debugger/latest/gdb/intel64/bin:/opt/intel/oneapi/compiler/latest/linux/lib/oclfpga/bin:/opt/intel/oneapi/compiler/latest/linux/bin/intel64:/opt/intel/oneapi/compiler/latest/linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
-ENV LD_LIBRARY_PATH='/opt/intel/oneapi/tbb/latest/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/mpi/latest//libfabric/lib:/opt/intel/oneapi/mpi/latest//lib/release:/opt/intel/oneapi/mpi/latest//lib:/opt/intel/oneapi/mkl/latest/lib/intel64:/opt/intel/oneapi/ippcp/latest/lib/intel64:/opt/intel/oneapi/ipp/latest/lib/intel64:/opt/intel/oneapi/dnnl/2023.2.0/cpu_dpcpp_gpu_dpcpp/lib:/opt/intel/oneapi/debugger/latest/gdb/intel64/lib:/opt/intel/oneapi/debugger/latest/libipt/intel64/lib:/opt/intel/oneapi/debugger/latest/dep/lib:/opt/intel/oneapi/dal/2023.2.0/lib/intel64:/opt/intel/oneapi/compiler/latest/linux/lib:/opt/intel/oneapi/compiler/latest/linux/lib/x64:/opt/intel/oneapi/compiler/latest/linux/lib/oclfpga/host/linux64/lib:/opt/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin:/opt/intel/oneapi/ccl/latest/lib/cpu_gpu_dpcpp:/opt/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin:/opt/intel/oneapi/ccl/latest/lib/cpu_gpu_dpcpp'
-ENV LIBRARY_PATH='/opt/intel/oneapi/tbb/latest/env/../lib/intel64/gcc4.8:/opt/intel/oneapi/mpi/latest//libfabric/lib:/opt/intel/oneapi/mpi/latest//lib/release:/opt/intel/oneapi/mpi/latest//lib:/opt/intel/oneapi/mkl/latest/lib/intel64:/opt/intel/oneapi/ippcp/latest/lib/intel64:/opt/intel/oneapi/ipp/latest/lib/intel64:/opt/intel/oneapi/compiler/latest/linux/compiler/lib/intel64_lin:/opt/intel/oneapi/compiler/latest/linux/lib:/opt/intel/oneapi/ccl/latest/lib/cpu_gpu_dpcpp'
-
 # Check if Intel compilers are available
-RUN icx --version && icpx --version && ifx --version 
+RUN . /opt/intel/oneapi/setvars.sh icx --version && icpx --version && ifx --version 
 
 # Add the precice user to run test with mpi
 RUN useradd -m -s /bin/bash precice
@@ -75,7 +40,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
         libeigen3-dev \
         libxml2-dev \
         lsb-release \
-        ninja \
+        ninja-build \
         python3-dev \
         python3-numpy \
         python3-pip \
@@ -89,7 +54,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
 RUN rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 
-RUN git clone -b release --depth 1 https://gitlab.com/petsc/petsc.git /petsc && \
+RUN . /opt/intel/oneapi/setvars.sh && \
+    git clone -b release --depth 1 https://gitlab.com/petsc/petsc.git /petsc && \
     cd /petsc && \
     export I_MPI_CC=icx I_MPI_CXX=icpx I_MPI_FC=ifx && \
     ./configure --with-cc=mpicc --with-cxx=mpicxx --with-fc=mpifc --prefix=/usr/local/ && \
@@ -100,10 +66,6 @@ RUN git clone -b release --depth 1 https://gitlab.com/petsc/petsc.git /petsc && 
 COPY --chown=root:root intel/99-setup-intel.sh /etc/profile.d/
 
 
-# Environment variables are set in the .env file
-# COPY --chown=root:root ginkgo/99-ginkgo-env.sh /etc/profile.d/
-# COPY ginkgo/ginkgo-install.sh ginkgo-install.sh
-# RUN ./ginkgo-install.sh && rm ginkgo-install.sh
 CMD ["/bin/bash", "--login"]
 
 # vim: set ft=dockerfile :

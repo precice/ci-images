@@ -13,7 +13,8 @@ Name | Distribution | Purpose | Image | Status
 `ubuntu-2004` | Ubuntu 20.04   | Oldest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2004) | [![Update Ubuntu 20.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2004.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2004.yml)
 `ubuntu-2204` | Ubuntu 22.04   | Newest Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2204) | [![Update Ubuntu 22.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2204.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2204.yml)
 `ubuntu-2404` | Ubuntu 24.04   | Upcoming Ubuntu LTS | [DockerHub](https://hub.docker.com/r/precice/ci-ubuntu-2404) | [![Update Ubuntu 24.04](https://github.com/precice/ci-images/actions/workflows/ubuntu-2404.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/ubuntu-2404.yml)
-`intel`       | Ubuntu 22.04   | [Intel oneAPI HPC Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit.html) | [DockerHub](https://hub.docker.com/r/precice/ci-intel) | :warning: must be build and pushed locally as the base image exceeds the [14GB of storage on runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources)
+`intel`       | Ubuntu 24.04   | [Intel oneAPI HPC Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit.html) | [DockerHub](https://hub.docker.com/r/precice/ci-intel) | [![Update Intel](https://github.com/precice/ci-images/actions/workflows/intel.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/intel.yml)
+
 
 <!-- [![Update Intel](https://github.com/precice/ci-images/actions/workflows/intel.yml/badge.svg)](https://github.com/precice/ci-images/actions/workflows/intel.yml) -->
 
