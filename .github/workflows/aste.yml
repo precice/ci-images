@@ -1,0 +1,23 @@
+name: "Update ASTE"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - 'ci-aste.dockerfile'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    env:
+      image: aste
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASS }}
+          dockerfile: "./ci-${{ env.image }}.dockerfile"
+          repository: precice/ci-${{ env.image }}
+          tags: latest

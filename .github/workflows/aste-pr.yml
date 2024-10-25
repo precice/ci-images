@@ -1,0 +1,12 @@
+name: "Check ASTE"
+on:
+  pull_request:
+    paths:
+      - 'ci-aste.dockerfile'
+
+jobs:
+  latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make aste
