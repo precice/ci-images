@@ -13,7 +13,7 @@ RUN git clone --branch v9.3.0 https://gitlab.kitware.com/vtk/vtk.git vtk && \
       rm -rf vtk
 
 RUN apt-get -qq update && \
-      apt-get install -qq -y python3-pip python3-jinja2 python3-scipy python3-sympy libmetis-dev time && \
+      apt-get install -qq -y python3-pip python3-jinja2 python3-scipy python3-sympy libmetis-dev time clang && \
       pip install -q --no-input --no-cache-dir --no-python-version-warning polars
 
 RUN echo 'export PYTHONPATH="${PYTHONPATH}:/usr/local/lib/python3.10/site-packages/"' > /etc/profile.d/99-vtk.sh
