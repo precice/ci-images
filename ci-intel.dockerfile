@@ -47,6 +47,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
         python3-venv \
         wget \
         liblapack-dev \
+        libbenchmark-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # NO MORE APT INSTALLS AFTER THIS LINE

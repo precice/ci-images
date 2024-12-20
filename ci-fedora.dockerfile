@@ -25,7 +25,7 @@ RUN dnf -y update && \
     kokkos-devel \
     python3-devel \
     python3-pip \
-    google-benchmark \
+    google-benchmark-devel \
     environment-modules \
     && \
     dnf clean all && \
