@@ -16,7 +16,7 @@ RUN dnf -y update && \
     libasan \
     libubsan \
     libxml2-devel \
-    redhat-lsb-core \
+    redhat-lsb \
     boost-devel \
     mpich-devel \
     ninja-build \
