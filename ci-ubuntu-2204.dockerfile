@@ -23,6 +23,7 @@ RUN apt-get -qq update && \
         libbenchmark-dev \
         libboost-all-dev \
         libeigen3-dev \
+        liblzma-dev \
         libxml2-dev \
         lintian \
         lsb-release \

@@ -39,6 +39,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
         libboost-all-dev \
         libeigen3-dev \
         libxml2-dev \
+        liblzma-dev \
         lsb-release \
         ninja-build \
         python3-dev \

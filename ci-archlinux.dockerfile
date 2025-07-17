@@ -19,6 +19,7 @@ RUN pacman -Syu --needed --noconfirm \
         gcc-fortran \
         git \
         libxml2 \
+        xz \
         make \
         ninja \
         python \

@@ -24,6 +24,7 @@ RUN apt-get -qq update && \
         libboost-all-dev \
         libeigen3-dev \
         libxml2-dev \
+        liblzma-dev \
         lintian \
         lsb-release \
         ninja-build \

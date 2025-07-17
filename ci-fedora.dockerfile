@@ -24,6 +24,7 @@ RUN dnf -y update && \
     eigen3-devel \
     kokkos-devel \
     python3-devel \
+    xz-devel \
     python3-pip \
     google-benchmark-devel \
     environment-modules \
