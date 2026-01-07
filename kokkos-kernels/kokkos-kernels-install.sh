@@ -1,5 +1,6 @@
 # This script installs Kokkos-Kernels
-VERSION=4.6.02
+VERSION=$(rpm -q --qf '%{VERSION}' kokkos-devel)
+echo "Installing Kokkos-Kernels  version ${VERSION}"
 
 wget -c https://github.com/kokkos/kokkos-kernels/archive/refs/tags/$VERSION.zip
 unzip $VERSION.zip && mv kokkos-kernels-$VERSION kokkos-kernels
