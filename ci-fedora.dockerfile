@@ -33,6 +33,10 @@ RUN dnf -y update && \
     echo "module load mpi/mpich-x86_64" > /etc/profile.d/mpich.sh
 
 # Run interactively using a bash login shell
+COPY --chown=root:root kokkos-kernels/99-kokkos-kernels-env.sh /etc/profile.d/
+COPY kokkos-kernels/kokkos-kernels-install.sh kokkos-kernels-install.sh
+RUN ./kokkos-kernels-install.sh && rm kokkos-kernels-install.sh
+
 COPY --chown=root:root ginkgo/99-ginkgo-env.sh /etc/profile.d/
 COPY ginkgo/ginkgo-install.sh ginkgo-install.sh
 RUN ./ginkgo-install.sh && rm ginkgo-install.sh
