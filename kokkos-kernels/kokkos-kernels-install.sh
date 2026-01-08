@@ -5,4 +5,4 @@ echo "Installing Kokkos-Kernels  version ${VERSION}"
 wget -c https://github.com/kokkos/kokkos-kernels/archive/refs/tags/$VERSION.zip
 unzip $VERSION.zip && mv kokkos-kernels-$VERSION kokkos-kernels
 cd kokkos-kernels && mkdir build && cd build
-cmake -DBUILD_TESTING="OFF" -DBUILD_SHARED_LIBS="ON" .. && make -j 4
+cmake -DBUILD_TESTING="OFF" -DBUILD_SHARED_LIBS="ON" -DCMAKE_INSTALL_PREFIX="/kokkos-kernels/install" .. && make install -j 4
