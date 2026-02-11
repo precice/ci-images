@@ -18,17 +18,8 @@ centos7:
 fedora:
 	docker build -t precice/ci-fedora:latest -f ci-fedora.dockerfile .
 
-ubuntu-1804:
-	docker build -t precice/ci-ubuntu-1804:latest -f ci-ubuntu-1804.dockerfile .
-
-ubuntu-2004:
-	docker build -t precice/ci-ubuntu-2004:latest -f ci-ubuntu-2004.dockerfile .
-
-ubuntu-2204:
-	docker build -t precice/ci-ubuntu-2204:latest -f ci-ubuntu-2204.dockerfile .
-
-ubuntu-2404:
-	docker build -t precice/ci-ubuntu-2404:latest -f ci-ubuntu-2404.dockerfile .
+ubuntu-%:
+	docker build -t precice/ci-ubuntu-$*:latest -f ci-ubuntu-$*.dockerfile .
 
 # Pull updated versions of all base images
 pull:
