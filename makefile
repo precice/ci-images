@@ -1,6 +1,6 @@
-ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 ubuntu-2404 intel
+ALL=archlinux centos7 fedora ubuntu-1804 ubuntu-2004 ubuntu-2204 ubuntu-2404 ubuntu-2604 intel 
 
-BASEIMAGES=ubuntu:20.04 ubuntu:22.04 ubuntu:24.04 archlinux:latest fedora:latest intel/oneapi-hpckit:devel-ubuntu22.04
+BASEIMAGES=ubuntu:20.04 ubuntu:22.04 ubuntu:24.04 ubuntu:26.04 archlinux:latest fedora:latest intel/oneapi-hpckit:devel-ubuntu22.04
 
 .PHONY: $(ALL)
 
