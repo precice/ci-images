@@ -31,8 +31,8 @@ RUN pacman -Syu --needed --noconfirm \
 # TODO reactivate petsc4py once they release a fix for cython 
 RUN useradd -m -G wheel aur && \
     echo "%wheel         ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-    su -l aur -c "git clone https://aur.archlinux.org/petsc.git && cd petsc && sed -i -e 's/--with-petsc4py=1/--with-petsc4py=0/' -e 's/--with-ptscotch-include=\/usr\/include /--with-ptscotch-include=\/usr\/include\/scotch /' PKGBUILD && yes | makepkg -si" && \
+    su -l aur -c "git clone https://aur.archlinux.org/petsc.git && cd petsc && sed -i -e 's/--with-petsc4py=1/--with-petsc4py=0/' -e 's/--with-ptscotch-include=\/usr\/include /--with-ptscotch-include=\/usr\/include\/scotch /' PKGBUILD && makepkg --noconfirm -si" && \
     userdel -rf aur && \
-    yes | pacman -Scc
+    pacman --noconfirm -Scc
 
 CMD ["/bin/bash", "--login"]
