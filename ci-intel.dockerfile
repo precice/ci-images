@@ -36,6 +36,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
         cmake \
         curl \
         git \
+        hwloc \
         libboost-all-dev \
         libeigen3-dev \
         libxml2-dev \

@@ -15,6 +15,7 @@ RUN pacman -Syu --needed --noconfirm \
         cmake \
         curl \
         eigen \
+        hwloc \
         gcc \
         gcc-fortran \
         git \

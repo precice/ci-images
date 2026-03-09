@@ -13,6 +13,7 @@ RUN dnf -y update && \
     wget \
     ccache \
     gcc-c++ \
+    hwloc-gui \
     libasan \
     libubsan \
     libxml2-devel \

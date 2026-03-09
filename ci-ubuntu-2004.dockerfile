@@ -19,6 +19,7 @@ RUN apt-get -qq update && \
         g++ \
         gfortran \
         git \
+        hwloc \
         lcov \
         libbenchmark-dev \
         libboost-all-dev \
