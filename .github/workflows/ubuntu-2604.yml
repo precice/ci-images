@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'ci-ubuntu-2406.dockerfile'
+      - 'ci-ubuntu-2604.dockerfile'
       - 'ubuntu/**'
 
 jobs:

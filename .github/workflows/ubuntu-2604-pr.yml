@@ -2,7 +2,7 @@ name: "Check Ubuntu 26.04"
 on:
   pull_request:
     paths:
-      - 'ci-ubuntu-2406.dockerfile'
+      - 'ci-ubuntu-2604.dockerfile'
       - 'ubuntu/**'
 
 jobs:
