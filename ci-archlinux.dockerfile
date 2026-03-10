@@ -16,6 +16,7 @@ RUN pacman -Syu --needed --noconfirm \
         curl \
         eigen \
         hwloc \
+        cairo \
         gcc \
         gcc-fortran \
         git \
