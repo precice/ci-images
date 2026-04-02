@@ -10,6 +10,7 @@ RUN pacman -Syu --needed --noconfirm \
         base-devel \
         benchmark \
         boost \
+        boost-libs \
         ccache \
         clang \
         cmake \
